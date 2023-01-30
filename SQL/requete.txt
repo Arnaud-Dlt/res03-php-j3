@@ -7,4 +7,9 @@
 7. SELECT users.first_name, addresses.number FROM users JOIN addresses ON users.address_id = addresses.id WHERE number IS NULL
 8. SELECT * FROM products WHERE price > 1000
 9. SELECT * FROM products JOIN pictures ON products.id = pictures.product_id
-10. 
+10. SELECT * FROM products JOIN products_categories ON products.id = products_categories.product_id JOIN categories ON products_categories.category_id = categories.id WHERE categories.title = "Voyage"
+11. SELECT users*, COUNT(orders.id) FROM users JOIN orders ON users.id = orders.user_id GROUP BY users.id HAVING COUNT(orders.id) > 10
+12. SELECT * FROM products JOIN products_orders ON products.id = products_orders.product_id JOIN orders ON products_orders.order_id = orders.id JOIN users ON orders.user_id = users.id WHERE users.id = (SELECT users.id 
+       FROM users 
+       ORDER BY registration_date 
+       ASC LIMIT 1)
