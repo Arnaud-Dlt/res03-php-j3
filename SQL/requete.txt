@@ -1,0 +1,10 @@
+1. SELECT * FROM users
+2. SELECT * FROM users ORDER BY last_name
+3. SELECT * FROM users ORDER BY registration_date DESC LIMIT 1
+4. SELECT * FROM users WHERE MONTH(birthdate) = MONTH(NOW())
+5. SELECT COUNT(id) FROM users
+6. SELECT users.first_name, addresses.city FROM users JOIN addresses ON users.address_id = addresses.id
+7. SELECT users.first_name, addresses.number FROM users JOIN addresses ON users.address_id = addresses.id WHERE number IS NULL
+8. SELECT * FROM products WHERE price > 1000
+9. SELECT * FROM products JOIN pictures ON products.id = pictures.product_id
+10. 
